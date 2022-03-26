@@ -4,10 +4,10 @@
     "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-    <property name="connection.url">jdbc:postgresql://localhost:5432/rest</property>
+      <property name="connection.url">jdbc:postgresql://ec2-3-229-161-70.compute-1.amazonaws.com/dfs856mm4bbp08</property>
     <property name="connection.driver_class">org.postgresql.Driver</property>
-    <property name="connection.username">postgres_user</property>
-    <property name="connection.password">password</property>
+    <property name="connection.username">rnzpjuezifyfqj</property>
+    <property name="connection.password">40d129950ae507e00f8b5ddfcc517a528826901696b7ea22ef05673d8c4cd4c1</property>
     <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL10Dialect</property>
     <property name="show_sql">true</property>
     <property name="format_sql">true</property>
