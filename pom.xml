@@ -90,6 +90,14 @@
       <artifactId>gson</artifactId>
       <version>${gson.version}</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/javax.j2ee/j2ee -->
+    <dependency>
+      <groupId>javax.j2ee</groupId>
+      <artifactId>j2ee</artifactId>
+      <version>1.4</version>
+      <scope>provided</scope>
+    </dependency>
+
   </dependencies>
 
   <build>
