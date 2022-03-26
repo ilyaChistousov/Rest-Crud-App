@@ -24,6 +24,7 @@ public class ConfigurationUtil {
 
     public Configuration getConfiguration() {
         Configuration configuration = new Configuration();
+        configuration.setProperty("connection.url", System.getenv("JDBC_DATABASE_URL"));
         return configuration.configure();
     }
 
