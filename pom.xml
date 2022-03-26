@@ -26,7 +26,6 @@
     <mysql.connector.version>8.0.28</mysql.connector.version>
     <mapstruct.version>1.4.2.Final</mapstruct.version>
     <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
-    <javax.servlet.jsp-api.version>2.0</javax.servlet.jsp-api.version>
     <gson.version>2.9.0</gson.version>
   </properties>
 
@@ -59,12 +58,6 @@
       <version>${flyway.version}</version>
     </dependency>
     <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
-      <version>${javax.servlet-api.version}</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
       <groupId>org.mapstruct</groupId>
       <artifactId>mapstruct</artifactId>
       <version>${mapstruct.version}</version>
@@ -90,11 +83,10 @@
       <artifactId>gson</artifactId>
       <version>${gson.version}</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/javax.j2ee/j2ee -->
     <dependency>
-      <groupId>javax.j2ee</groupId>
-      <artifactId>j2ee</artifactId>
-      <version>1.4</version>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>${javax.servlet-api.version}</version>
       <scope>provided</scope>
     </dependency>
 
