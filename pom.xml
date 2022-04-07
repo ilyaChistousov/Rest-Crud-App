@@ -16,11 +16,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
-    <junit.version>4.13.1</junit.version>
-    <mockito.version>4.3.1</mockito.version>
     <hibernate.core.version>5.6.5.Final</hibernate.core.version>
     <lombok.version>1.18.22</lombok.version>
-    <maven.surefire-plugin.version>2.22.2</maven.surefire-plugin.version>
     <flyway.version>8.2.0</flyway.version>
     <mysql.connector.version>8.0.28</mysql.connector.version>
     <mapstruct.version>1.4.2.Final</mapstruct.version>
