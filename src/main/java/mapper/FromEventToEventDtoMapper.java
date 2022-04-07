@@ -2,14 +2,15 @@ package mapper;
 
 import dto.EventDto;
 import model.Event;
-import org.mapstruct.Mapper;
 
-@Mapper
-public interface FromEventToEventDtoMapper extends BaseMapper<EventDto, Event> {
+public class FromEventToEventDtoMapper {
 
-    @Override
-    EventDto mappingFromEntityToDto(Event entity);
-
-    @Override
-    Event mappingFromDtoToEntity(EventDto dto);
+    public EventDto mapToDto(Event event) {
+        return EventDto.builder()
+                .id(event.getId())
+                .createdDate(event.getCreateData())
+                .fileId(event.getFile().getId())
+                .userId(event.getUser().getId())
+                .build();
+    }
 }

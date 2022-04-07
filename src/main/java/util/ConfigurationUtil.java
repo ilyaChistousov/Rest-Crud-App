@@ -1,5 +1,6 @@
 package util;
 
+import lombok.Cleanup;
 import lombok.SneakyThrows;
 import lombok.experimental.UtilityClass;
 import org.flywaydb.core.Flyway;
@@ -13,18 +14,17 @@ public class ConfigurationUtil {
 
     static {
         loadProperties();
-        var load = Flyway.configure()
+        Flyway.configure()
                 .dataSource(getProperties("db.url"),
                         getProperties("db.username"),
                         getProperties("db.password"))
                 .locations("classpath:/db/migration")
-                .load();
-        load.migrate();
+                .load()
+                .migrate();
     }
 
     public Configuration getConfiguration() {
-        Configuration configuration = new Configuration();
-        return configuration.configure();
+        return new Configuration().configure();
     }
 
     private static String getProperties(String key) {
@@ -33,9 +33,8 @@ public class ConfigurationUtil {
 
     @SneakyThrows(IOException.class)
     private static void loadProperties() {
-        try(var inputStream = ConfigurationUtil.class.getClassLoader()
-                .getResourceAsStream("flyway.properties")) {
+        @Cleanup var inputStream = ConfigurationUtil.class.getClassLoader()
+                .getResourceAsStream("flyway.properties");
             PROPERTIES.load(inputStream);
-        }
     }
 }

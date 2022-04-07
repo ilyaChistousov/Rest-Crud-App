@@ -29,15 +29,10 @@ public class FileService {
 
         var maybeUser = userRepository.getById(userId,
                 Map.of(GraphSemantic.LOAD.getJpaHintName(),userRepository.USER_EVENTS_GRAPH));
-
         if(maybeUser.isPresent()) {
-
             fileRepository.save(file);
-
             maybeUser.get().addEvent(event);
-
             userRepository.update(maybeUser.get());
-
             return file.getId();
         } else {
             throw new NullPointerException();
@@ -47,7 +42,6 @@ public class FileService {
     public Optional<FileDto> getById(Long fileId) {
         return fileRepository.getById(fileId)
                 .map(mapper::mappingFromEntityToDto);
-
     }
 
     public List<FileDto> getAll() {
@@ -62,7 +56,6 @@ public class FileService {
             f.setPathFile(fileDto.getPathFile());
             fileRepository.update(f);
         });
-
         return maybeFile.isPresent();
     }
 
